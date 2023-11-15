@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Producto } from 'src/app/models/producto';
 import { ProductoService } from 'src/app/services/producto.service';
+import { UploadService } from 'src/app/services/upload.service';
 import Swal from 'sweetalert2'
 
 @Component({
@@ -13,6 +14,7 @@ import Swal from 'sweetalert2'
 export class CrearProductosComponent {
 
   productoForm: FormGroup;
+ 
 
   constructor(private fb: FormBuilder,
               private router: Router,
@@ -21,7 +23,8 @@ export class CrearProductosComponent {
         producto:  ['', Validators.required],
         categoria: ['', Validators.required],
         descripcion: ['', Validators.required],
-        precio:    ['', Validators.required]
+        precio:    ['', Validators.required], 
+        imagen: ['', Validators.required]
     })
   }
 
@@ -32,6 +35,7 @@ export class CrearProductosComponent {
       categoria: this.productoForm.get('categoria')?.value,
       descripcion: this.productoForm.get('descripcion')?.value,
       precio: this.productoForm.get('precio')?.value,
+      imagen: this.productoForm.get('imagen')?.value
     }
 
     console.log(PRODUCTO)

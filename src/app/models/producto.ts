@@ -5,12 +5,14 @@ export class Producto {
     categoria: string;
     descripcion: string;
     precio: number;
+    imagen: string;
 
-    constructor(producto:string, categoria:string, descripcion: string, precio: number){
+    constructor(producto:string, categoria:string, descripcion: string, precio: number, imagen: string){
         this.producto = producto;
         this.categoria = categoria;
         this.descripcion = descripcion;
         this.precio = precio;
+        this.imagen = imagen;
     }
 
 }

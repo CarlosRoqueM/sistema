@@ -30,6 +30,7 @@
                                                 <th>Categoria</th>
                                                 <th>Descripcion</th>
                                                 <th>Precio</th>
+                                                <th>Imagen</th>
                                                 <th>Acciones</th>
                                             </tr>
                                         </thead>
@@ -40,6 +41,7 @@
                                                 <td>{{ producto.categoria }}</td>
                                                 <td>{{ producto.descripcion }}</td>
                                                 <td>{{ producto.precio | currency: 'S/.' }}</td>
+                                                <td>{{ producto.imagen}}</td>
                                                 <td>
                                                     <i (click)="eliminarProducto(producto._id)" style="font-size: 25px;" class="pe pe-7s-trash text-accent"></i>&nbsp;&nbsp;
                                                     <i [routerLink]="['/editar-producto', producto._id]" style="font-size: 25px;" class="pe pe-7s-pen text-accent"></i>
